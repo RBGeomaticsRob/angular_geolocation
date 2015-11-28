@@ -14,12 +14,10 @@
   <body ng-controller="LocationsController as locationCtrl">
     <h1>Mission Christmas Parcel</h1>
     <div>
-      <ul>
-        <li>
-          Location 1
-        </li>
-        <li>
-          Location 2
+      <ul class="list-group">
+        <li ng-repeat="location in locationCtrl.locations.items">
+          <h2>{{location.location}}</h2>
+          <p>Lat:{{location.Lat}}, Long:{{location.Long}}</p>
         </li>
       </ul>
     </div>
