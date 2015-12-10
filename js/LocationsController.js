@@ -1,17 +1,30 @@
 app.controller('LocationsController',[function() {
+
   var self = this;
+
+  self.map = { center: { latitude: 51.23634, longitude: 1.39560 }, zoom: 8};
 
   self.locations = {
     "items": [
       {
-        "location": "1",
-        "Lat": "51.23634",
-        "Long": "1.39560"
+        "location": "0",
+        "map": {
+          center: {
+              latitude: 51.23634,
+              longitude: 1.39560
+            },
+          zoom: 8
+        }
       },
       {
-        "location": "2",
-        "Lat": "51.24634",
-        "Long": "1.40560"
+        "location": "1",
+        "map": {
+          center: {
+              latitude: 50.23634,
+              longitude: -1.39560
+            },
+          zoom: 8
+        }
       }
     ]
   };

@@ -1,1 +1,1 @@
-var app = angular.module('MissionCP',['ngResource']);
+var app = angular.module('MissionCP',['ngResource','uiGmapgoogle-maps']);

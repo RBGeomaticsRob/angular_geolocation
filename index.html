@@ -4,9 +4,14 @@
     <meta charset="utf-8">
     <title>Angular Store</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="bower_components/lodash/lodash.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/LocationsController.js"></script>
   </head>
@@ -24,12 +29,13 @@
     <div>
     <form name="SelectLocation">
       <label for="locationSelect"> Select Present Location: </label>
-      <select name="singleSelect" ng-model="data.location">
+      <select name="singleSelect" ng-model="data.location" ng-init="data.location='0'">
         <option ng-repeat="location in locationCtrl.locations.items" ng-value="{{location.location}}" >{{location.location}}</option>
       </select>
-      <p>{{data.location}}</p>
+      <ui-gmap-google-map center="locationCtrl.locations.items[{{data.location}}].map.center" zoom="locationCtrl.locations.items[{{data.location}}].map.zoom"></ui-gmap-google-map>
     </form>
       A map will be inserted here with geolocation tracking
     </div>
+
   </body>
 </html>
