@@ -22,6 +22,13 @@
       </ul>
     </div>
     <div>
+    <form name="SelectLocation">
+      <label for="locationSelect"> Select Present Location: </label>
+      <select name="singleSelect" ng-model="data.location">
+        <option ng-repeat="location in locationCtrl.locations.items" ng-value="{{location.location}}" >{{location.location}}</option>
+      </select>
+      <p>{{data.location}}</p>
+    </form>
       A map will be inserted here with geolocation tracking
     </div>
   </body>
