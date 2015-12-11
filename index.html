@@ -32,13 +32,13 @@
     <section ng-controller="TreasureController as treasure">
       <ui-gmap-google-map center="locationCtrl.map.center" zoom="locationCtrl.map.zoom">
         <article>
-          <ui-gmap-marker coords="treasure.marker.coords" idkey="treasure.marker.id">
+          <ui-gmap-marker coords="treasure.marker.coords" idkey="treasure.marker.id" options="{icon:'/images/dot.png'}">
           </ui-gmap-marker>
-          <ui-gmap-marker coords="treasure.marker.coords" idkey="treasure.marker.id">
+          <ui-gmap-marker coords="locationCtrl.siteCoords(data.location)" idkey="1">
           </ui-gmap-marker>
         </article>
       </ui-gmap-google-map>
-      {{data.location}}
+
     </section>
     </div>
 
