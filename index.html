@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>Angular Store</title>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="vendor/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script src="bower_components/lodash/lodash.min.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/ngGeolocation/ngGeolocation.min.js"></script>
-    <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
-    <script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+    <script src="vendor/lodash.min.js"></script>
+    <script src="vendor/angular.min.js"></script>
+    <script src="vendor/angular-resource.min.js"></script>
+    <script src="vendor/ngGeolocation.min.js"></script>
+    <script src="vendor/angular-simple-logger.min.js"></script>
+    <script src="vendor/angular-google-maps.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/LocationsController.js"></script>
     <script src="js/GeolocationController.js"></script>
@@ -31,9 +31,14 @@
     </form>
     <section ng-controller="TreasureController as treasure">
       <ui-gmap-google-map center="locationCtrl.map.center" zoom="locationCtrl.map.zoom">
-        <ui-gmap-marker coords="treasure.marker.coords" idkey="treasure.marker.id">
+        <article>
+          <ui-gmap-marker coords="treasure.marker.coords" idkey="treasure.marker.id">
           </ui-gmap-marker>
+          <ui-gmap-marker coords="treasure.marker.coords" idkey="treasure.marker.id">
+          </ui-gmap-marker>
+        </article>
       </ui-gmap-google-map>
+      {{data.location}}
     </section>
     </div>
 

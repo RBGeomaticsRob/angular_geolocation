@@ -4,4 +4,5 @@ app.controller('GeoController',['$geolocation', function($geolocation){
     maximumAge: 250,
     enableHighAccuracy: true
   });
+
 }]);

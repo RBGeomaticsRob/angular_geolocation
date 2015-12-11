@@ -1,4 +1,4 @@
-app.controller('LocationsController',['$geolocation', function($geolocation) {
+app.controller('LocationsController',[function() {
 
   var self = this;
 
@@ -13,6 +13,10 @@ app.controller('LocationsController',['$geolocation', function($geolocation) {
 
   self.setMap = function(setSite){
     self.map = self.locations.items[setSite].map;
+  };
+
+  self.siteCoords = function(setSite){
+    return self.locations.items[setSite].map.center;
   };
 
   self.locations = {
