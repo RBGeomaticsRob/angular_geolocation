@@ -30,15 +30,16 @@
       {{locationCtrl.site}}
     </form>
     <section ng-controller="TreasureController as treasure">
+      <p>Accuracy: {{treasure.accuracy}}m</p>
       <ui-gmap-google-map center="locationCtrl.map.center" zoom="locationCtrl.map.zoom">
         <article>
           <ui-gmap-marker coords="treasure.marker.coords" idkey="treasure.marker.id" options="{icon:'/images/dot.png'}">
           </ui-gmap-marker>
-          <ui-gmap-marker coords="locationCtrl.siteCoords(data.location)" idkey="1">
+          <ui-gmap-marker coords="locationCtrl.locations.items[data.location].coords" idkey="1">
           </ui-gmap-marker>
         </article>
       </ui-gmap-google-map>
-
+      {{locationCtrl.siteCoords(0)}}
     </section>
     </div>
 
