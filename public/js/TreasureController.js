@@ -30,25 +30,8 @@ app.controller('TreasureController',[function() {
     self.setMarker(position);
     self.setAccuracy(position);
   },
-  function(error){console.log(error.code);},
-  {timeout:10000, enableHighAccuracy: true, maximumAge: 0});
-  // $scope.$watch('myPosition.coords', function(newValue,oldValue){
-  //   console.log(newValue);
-  //   self.marker = {
-  //     id: 0,
-  //     coords: {
-  //       latitude: newValue.latitude,
-  //       longitude: newValue.longitude
-  //     }
-  //   };
-  // }, true);
-
-  // self.myCoords = $geolocation.position.coords;
-  //
-  // self.myError = $geolocation.position.error;
-  //
-  // console.log(self.myCoords);
-  // console.log(self.myError);
+    function(error){console.log(error.code);},
+    {timeout:10000, enableHighAccuracy: true, maximumAge: 0});
 
 
 }]);
