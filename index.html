@@ -20,19 +20,12 @@
   <body ng-controller="LocationsController as locationCtrl">
     <h1>Mission Christmas Parcel</h1>
     <div>
-      <ul class="list-group">
-        <li ng-repeat="location in locationCtrl.locations.items">
-          <h2>{{location.location}}</h2>
-          <p>Lat:{{location.Lat}}, Long:{{location.Long}}</p>
-        </li>
-      </ul>
-    </div>
-    <div>
     <form name="SelectLocation">
       <label for="locationSelect"> Select Present Location: </label>
-      <select name="singleSelect" ng-model="data.location" ng-init="data.location='0'">
-        <option ng-repeat="location in locationCtrl.locations.items" ng-value="{{location.location}}" ng-click="locationCtrl.selectSite({{location.location}})">{{location.location}}</option>
+      <select name="singleSelect" ng-model="data.location" ng-init="data.location='0'" ng-change="locationCtrl.selectSite(data.location)">
+        <option ng-repeat="location in locationCtrl.locations.items" ng-value="{{location.location}}">{{location.location}}</option>
       </select>
+      {{locationCtrl.site}}
       <ui-gmap-google-map center="locationCtrl.map.center" zoom="locationCtrl.map.zoom"></ui-gmap-google-map>
     </form>
       A map will be inserted here with geolocation tracking
