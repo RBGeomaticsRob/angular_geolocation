@@ -2,7 +2,13 @@ app.controller('LocationsController',[function() {
 
   var self = this;
 
-  self.map = { center: { latitude: 51.23634, longitude: 1.39560 }, zoom: 8};
+  self.site = 0;
+
+  this.selectSite = function(setSite) {
+    self.site = setSite;
+  };
+
+  // self.map = { center: { latitude: 51.23634, longitude: 1.39560 }, zoom: 8};
 
   self.locations = {
     "items": [
@@ -28,4 +34,6 @@ app.controller('LocationsController',[function() {
       }
     ]
   };
+
+  self.map = self.locations.items[self.site].map;
 }]);

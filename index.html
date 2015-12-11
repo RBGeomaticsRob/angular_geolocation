@@ -31,9 +31,9 @@
     <form name="SelectLocation">
       <label for="locationSelect"> Select Present Location: </label>
       <select name="singleSelect" ng-model="data.location" ng-init="data.location='0'">
-        <option ng-repeat="location in locationCtrl.locations.items" ng-value="{{location.location}}" >{{location.location}}</option>
+        <option ng-repeat="location in locationCtrl.locations.items" ng-value="{{location.location}}" ng-click="locationCtrl.selectSite({{location.location}})">{{location.location}}</option>
       </select>
-      <ui-gmap-google-map center="locationCtrl.locations.items[{{data.location}}].map.center" zoom="locationCtrl.locations.items[{{data.location}}].map.zoom"></ui-gmap-google-map>
+      <ui-gmap-google-map center="locationCtrl.map.center" zoom="locationCtrl.map.zoom"></ui-gmap-google-map>
     </form>
       A map will be inserted here with geolocation tracking
     </div>
