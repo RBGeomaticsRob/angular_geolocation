@@ -1,4 +1,4 @@
-app.controller('LocationsController',[function() {
+app.controller('LocationsController',['$geolocation', function($geolocation) {
 
   var self = this;
 
@@ -39,6 +39,5 @@ app.controller('LocationsController',[function() {
       }
     ]
   };
-
 
 }]);
